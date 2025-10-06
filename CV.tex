@@ -1,0 +1,166 @@
+% --------------------------------------------------------------------
+% Mary Ammar CV
+% Based on Simple Hipster CV (Friggeri + TwentySeconds mashup)
+% --------------------------------------------------------------------
+
+\documentclass[lighthipster]{simplehipstercv}
+\usepackage[utf8]{inputenc}
+\usepackage[default]{raleway}
+\usepackage[margin=1cm, a4paper]{geometry}
+\usepackage[hidelinks]{hyperref}
+
+%------------------------------------------------------------------ Dimensions
+\newlength{\rightcolwidth}
+\newlength{\leftcolwidth}
+\setlength{\leftcolwidth}{0.23\textwidth}
+\setlength{\rightcolwidth}{0.75\textwidth}
+
+%------------------------------------------------------------------ Title Info
+\title{CV - Mary Ammar}
+\author{Mary Ammar}
+\date{October 2025}
+
+\pagestyle{empty}
+
+\begin{document}
+\thispagestyle{empty}
+
+%-------------------------------------------------------------
+% HEADER
+\simpleheader{headercolour}{Mary}{Ammar}{Data Scientist | Machine Learning \& Data Analysis}{white}
+
+%-------------------------------------------------------------
+\subsection*{}
+\vspace{4em}
+
+\setlength{\columnsep}{1.5cm}
+\columnratio{0.23}[0.75]
+\begin{paracol}{2}
+\hbadness5000
+\paracolbackgroundoptions
+
+%-------------------------------------------------------------
+% LEFT COLUMN
+\footnotesize
+{\setasidefontcolour
+\flushright
+\begin{center}
+    \roundpic{mary.jpg}
+\end{center}
+
+\bg{cvgreen}{white}{À propos de moi}\\[0.5em]
+{\footnotesize
+Étudiante en Master Statistique à l’Université de Strasbourg, passionnée par la Data Science et l’analyse de données. J’aime transformer des données complexes en informations utiles et visuelles claires.}
+\bigskip
+
+\bg{cvgreen}{white}{Informations personnelles} \\[0.5em]
+Mary Ammar \\
+Nationalité : Libanaise \\
+Localisation : Strasbourg, France \\
+Téléphone : 06 50 26 95 17 \\
+Email : \href{mailto:ammarmary02@gmail.com}{ammarmary02@gmail.com} \\
+LinkedIn : \href{https://www.linkedin.com/in/mary-ammar-45b987267}{mary-ammar-45b987267}
+
+\bigskip
+
+\bg{cvgreen}{white}{Compétences Techniques}\\[0.5em]
+\texttt{Python} ~•~ \texttt{R} ~•~ \texttt{SQL} ~•~ \texttt{SAS} ~•~ \texttt{C++} ~•~ \texttt{LaTeX} \\
+\vspace{0.5em}
+\texttt{Jupyter} ~•~ \texttt{RShiny} ~•~ \texttt{Git} ~•~ \texttt{Ubuntu} \\
+\texttt{Power BI} ~•~ \texttt{Excel} ~•~ \texttt{Plotly} ~•~ \texttt{ggplot2}
+
+\bigskip
+
+\bg{cvgreen}{white}{Langues}\\[0.5em]
+Français — Courant \\
+Anglais — Intermédiaire \\
+Arabe — Langue maternelle
+
+\bigskip
+
+\bg{cvgreen}{white}{Centres d’intérêt}\\[0.5em]
+Analyse de données, intelligence artificielle, apprentissage automatique, recherche scientifique, visualisation de données.
+
+\vspace{3em}
+
+\infobubble{\faEnvelopeO}{cvgreen}{white}{ammarmary02@gmail.com}
+\infobubble{\faMapMarker}{cvgreen}{white}{Strasbourg, France}
+\infobubble{\faLinkedin}{cvgreen}{white}{mary-ammar-45b987267}
+
+\phantom{turn the page}
+}
+
+%-----------------------------------------------------------
+% RIGHT COLUMN
+\switchcolumn
+\small
+
+%-----------------------------------------------------------
+\section*{Expériences Professionnelles}
+
+\begin{tabular}{r| p{0.6\textwidth} c}
+    \cvevent{02/2025--08/2025}{Stage en Data Science}{Laboratoire B2A}{Strasbourg, France \color{cvred}}{
+    - Extraction de données avec SQL à partir du système SIL. \\
+    - Nettoyage, structuration et analyse avec R. \\
+    - Création de visualisations (ggplot2, plotly). \\
+    - Développement d’un tableau de bord RShiny utilisé par les chercheurs. \\
+    - Rédaction de rapports et présentations.}{data.png} \\[1em]
+    
+    \cvevent{04/2024--06/2024}{Stage en Data Analyste}{Institut Biologie Moléculaire des Plantes}{Strasbourg, France \color{cvred}}{
+    - Analyses ACP de données ARN de plantes. \\
+    - Tests statistiques (Student, ANOVA, Kruskal-Wallis, Wilcoxon). \\
+    - Utilisation de R et gestion de version avec Git.}{plant.png}
+\end{tabular}
+
+\vspace{3em}
+
+%-----------------------------------------------------------
+\section*{Formations}
+
+\begin{tabular}{r p{0.6\textwidth} c}
+    \cvdegree{09/2025--Présent}{Master CSMI}{Université de Strasbourg} \\[1em]
+    \cvdegree{09/2023--08/2025}{Master en Statistique}{Université de Strasbourg}{
+    Machine Learning (TensorFlow, PyTorch), Statistiques Bayésiennes, Modèles Linéaires Généralisés, R, Python, SAS, Visualisation de données.}{}{strasbourg.png} \\[1em]
+    
+    \cvdegree{09/2020--06/2023}{Licence en Mathématiques Appliquées}{Université de Strasbourg}{
+    Probabilités, statistiques avancées, programmation C++, analyse numérique.}{}{maths.png} \\[1em]
+
+    \cvdegree{09/2019--06/2020}{Baccalauréat Scientifique}{Lycée Officiel Antelias, Liban}{}{bacc.png}
+\end{tabular}
+
+\vspace{3em}
+
+%-----------------------------------------------------------
+\section*{Projets et Réalisations}
+\begin{itemize}
+    \item Développement d’un tableau de bord interactif RShiny pour le suivi de résultats d’IST.
+    \item Implémentation de modèles de Machine Learning pour la classification et la prédiction en Python.
+    \item Analyse de données biologiques et visualisations statistiques avancées en R.
+\end{itemize}
+
+\vspace{3em}
+
+%-----------------------------------------------------------
+\section*{Certifications et Outils}
+\begin{itemize}
+    \item Git / GitHub — Gestion de version et collaboration.
+    \item VS Code, Jupyter Notebook, Spyder.
+    \item LaTeX — Rédaction scientifique et CV.
+\end{itemize}
+
+\vfill{} % espace avant le bas de page
+
+%-----------------------------------------------------------
+% FOOTER
+\setlength{\parindent}{0pt}
+\begin{minipage}[t]{\rightcolwidth}
+\begin{center}\fontfamily{\sfdefault}\selectfont \color{black!70}
+{\small Mary Ammar \icon{\faEnvelopeO}{cvgreen}{} \href{mailto:ammarmary02@gmail.com}{ammarmary02@gmail.com}
+\icon{\faMapMarker}{cvgreen}{} Strasbourg
+\icon{\faPhone}{cvgreen}{} 06 50 26 95 17
+\icon{\faLinkedin}{cvgreen}{} \href{https://www.linkedin.com/in/mary-ammar-45b987267}{mary-ammar-45b987267}}
+\end{center}
+\end{minipage}
+
+\end{paracol}
+\end{document}
