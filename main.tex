@@ -1,8 +1,5 @@
-% a mashup of hipstercv, friggeri and twenty cv
-% https://www.latextemplates.com/template/twenty-seconds-resumecv
-% https://www.latextemplates.com/template/friggeri-resume-cv
-
 \documentclass[lighthipster]{simplehipstercv}
+
 % available options are: darkhipster, lighthipster, pastel, allblack, grey, verylight, withoutsidebar
 % withoutsidebar
 \usepackage[utf8]{inputenc}
@@ -13,8 +10,32 @@
 \usepackage{tikz}
 \usepackage{graphicx}
 \usepackage{xcolor}
+%\usepackage{fontspec}
 
+\usepackage{silence}
+% Masque l'avertissement spécifique à la substitution de police Font Awesome
+\WarningFilter{latexfont}{Font shape 'U/fontawesometwo/regular/n' undefined}
+\WarningFilter{latexfont}{Font shape 'U/fontawesometwo/m/sl' undefined}
+\WarningFilter{latexfont}{Font shape 'U/fontawesometwo/regular/sl' undefined}
+\WarningFilter{latexfont}{Some font shapes were not available, defaults substituted}
+\WarningFilter{latexfont}{Font shape 'U/fontawesometwo/regular/n' undefined}
+\WarningFilter{latexfont}{Some font shapes were not available, defaults substituted}
 
+\makeatletter
+% Redirige le message d'avertissement de substitution de police
+\def\f@ntas@warn#1{%
+  \immediate\write\@auxout{%
+    \string\GenericWarning{(#1)}{%
+      LaTeX Font Warning: Font shape `U/fontawesometwo/regular/n' undefined\MessageBreak
+      (Font) using `U/fontawesometwo/m/n' instead%
+    }%
+  }%
+}
+\makeatother
+
+% a mashup of hipstercv, friggeri and twenty cv
+% https://www.latextemplates.com/template/twenty-seconds-resumecv
+% https://www.latextemplates.com/template/friggeri-resume-cv
 
 %------------------------------------------------------------------ Variablen
 
@@ -22,6 +43,7 @@
 \newlength{\leftcolwidth}
 \setlength{\leftcolwidth}{0.23\textwidth}
 \setlength{\rightcolwidth}{0.75\textwidth}
+
 
 %------------------------------------------------------------------
 \title{Mary Ammar CV}
@@ -50,7 +72,8 @@
 \setlength{\columnsep}{1.5cm}
 \columnratio{0.25}
 \begin{paracol}{2}
-\hbadness5000
+\raggedright % <--- Essentiel
+\hbadness5000 % <--- Utile pour les petites erreurs de coupure
 %\backgroundcolor{c[1]}[rgb]{1,1,0.8} % cream yellow for column-1 %\backgroundcolor{g}[rgb]{0.8,1,1} % \backgroundcolor{l}[rgb]{0,0,0.7} % dark blue for left margin
 
 
@@ -91,20 +114,6 @@ Nationality: Lebanese
 
 \bigskip
 
-%\bg{cvgreen}{white}{Areas of specialization} \\[0.5em]
-
-%Privateering ~•~ Bucaneering ~•~ Parler ~•~ Rum
-
-%\bigskip
-
-
-
-%\bigskip
-
-%\bg{cvgreen}{white}{Interests}\\[0.5em]
-
-%\lorem
-%\bigskip
 
 \bg{cvgreen}{white}{Interests}\\[0.5em]
 Data Science\\
@@ -118,8 +127,8 @@ Music\\
 %\infobubble{\faAt}{cvgreen}{white}{jack@sparrow.org}
 %\infobubble{\faTwitter}{cvgreen}{white}{@sparrow}
 %\infobubble{\faFacebook}{cvgreen}{white}{}
-\infobubble{\faGithub}{cvgreen}{white}{\href{https://github.com/mary-ammar-univ}{mary-ammar-univ}}
-\infobubble{\faLinkedin}{cvgreen}{white}{\href{https://www.linkedin.com/in/mary-ammar-45b987267}{Mary Ammar}}
+\icon{\faGithub}{cvgreen}{white}{\href{https://github.com/mary-ammar-univ}{mary-ammar-univ}}
+\icon{\faLinkedin}{cvgreen}{white}{\href{https://www.linkedin.com/in/mary-ammar-45b987267}{Mary Ammar}}
 
 \phantom{turn the page}
 
@@ -151,7 +160,7 @@ Music\\
     \item Used version control tools such as Git for collaborative work and reproducibility.
 \end{itemize}
 
-\vspace{-1em}
+\vspace{-0.5em}
 
 
 \section*{Education}
@@ -189,35 +198,15 @@ Music\\
     \item Graduated with distinction in scientific subjects.
 \end{itemize}
 
-%\begin{minipage}[t]{0.3\textwidth}
-%\section*{Certificates \& Grants}
-%\begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.55\textwidth}}
-%    1708 & Captain's Certificates \\
-%    1710 & Travel grant \\
-%    1715--1716 & Grant from the Pirate's Company
-%\end{tabular}
 
 
-
-
-%\end{minipage}\hfill
-
-%\section*{Publications}
-%\begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.7\textwidth}}
-%    1729 & \emph{How I almost got killed by Lady Swan}, Tortuga Printing Press. \\
-%    1720 & ``Privateering for Beginners'', in: \emph{The Pragmatic Pirate} (1/1720).
-%\end{tabular}
-%\bigskip
-
-%\section*{Talks}
-%\begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.6\textwidth}}
-%    Nov. 1726 & ``How I lost my ship (\& and how to get it back)'', at: \emph{Annual Pirate's Conference} in Tortuga, Nov. 1726.
-%\end{tabular}
-%\end{minipage}
 
 \vspace{1em}
 
-\begin{minipage}[t]{0.3\textwidth}
+\begin{minipage}[t]{0.28\linewidth}
+\setlength{\hfuzz}{100pt} % Tolérance extrême (plus que nécessaire)
+\tolerance=9999          % Autorise les très mauvaises coupures (force la ligne à tenir)
+\emergencystretch=1em    % Ajoute de l'espace si nécessaire pour faire tenir la ligne
 \section*{Languages}
 \begin{tabular}{l | ll}
 \textbf{Arabic} & C1 & {\phantom{x}\footnotesize mother tongue} \\
@@ -226,7 +215,10 @@ Music\\
 %\textbf{Italian} & C2 & \pictofraction{\faCircle}{cvgreen}{3}{black!30}{1}{\tiny}
 \end{tabular}
 \end{minipage}\hfill
-\begin{minipage}[t]{0.35\textwidth}
+\begin{minipage}[t]{0.3\linewidth}
+\setlength{\hfuzz}{100pt} % Tolérance extrême (plus que nécessaire)
+\tolerance=9999          % Autorise les très mauvaises coupures (force la ligne à tenir)
+\emergencystretch=1em    % Ajoute de l'espace si nécessaire pour faire tenir la ligne
 \section*{Programming}
 \begin{tabular}{r @{\hspace{0.5em}}l}
      \bg{skilllabelcolour}{iconcolour}{Python, R}& \barrule{0.55}{0.5em}{cvgreen} \\
@@ -247,7 +239,8 @@ Music\\
 %	FINAL FOOTER
 %----------------------------------------------------------------------------------------
 \setlength{\parindent}{0pt}
-\begin{minipage}[t]{\rightcolwidth}
+\begin{minipage}[t]{\linewidth}
+    
 \begin{center}\fontfamily{\sfdefault}\selectfont \color{black!70}
 {\small Mary Ammar\icon{\faEnvelopeO}{cvgreen}{} ammarmary02@gmail.com\icon{\faMapMarker}{cvgreen}{} Strasbourg \icon{\faPhone}{cvgreen}{} 07 32 69 41 65 %\newline\icon{\faAt}{cvgreen}{} \protect\url{jack@sparrow.com}
 }
