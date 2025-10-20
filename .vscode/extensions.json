@@ -3,6 +3,7 @@
         "james-yu.latex-workshop",
         "tecosaur.latex-utilities",
         "asciidoctor.asciidoctor-vscode",
-        "github.copilot"
+        "github.copilot",
+        "GitHub.vscode-github-actions"
     ]
 }
